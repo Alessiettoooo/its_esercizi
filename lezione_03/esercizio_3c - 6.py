@@ -3,8 +3,8 @@ rettili =["serpente","lucertola","tartaruga","coccodrillo"]
 uccelli =["aquila","pappagallo","gufo","falco","cigno","anatra","gallina","tacchino"]
 pesci =["squalo","trota","salmone","carpa"]
 
-animale = str(input(f"inserisci il nome del animale"))
-habitat = str(input(f"inserisci l'habitat dell'animale tra aria/acqua/terra"))
+animale = str(input(f"inserisci il nome del animale  "))
+habitat = str(input(f"inserisci l'habitat dell'animale tra aria/acqua/terra  ") )
 
 match animale :
 
@@ -32,31 +32,30 @@ acqua =["balena","delfino","tartaruga","coccodrillo","cigno","anatra","squalo","
 aria =["aquila","pappagallo","gufo","falco"]
 terra =["cane","gatto","cavallo","elefante","leone","serpente","lucertola","tartaruga","coccodrillo","gallina","tacchino"]
 
+
 diz = {"nome":animale,"categoria":animal_type,"habitat":habitat}
 
-match diz : 
-    
-    case diz if diz["nome"] in mammifero and animale in terra :
-        print(f" l'animale {animale} è un {animal_type} e vive in {habitat}")
-    
-    case diz if diz["nome"] in mammifero and animale in acqua :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-
-    case diz if diz["nome"] in rettili and animale in terra :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-
-    case diz if diz["nome"] in rettili and animale in acqua :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-
-    case diz if diz["nome"] in uccelli and animale in aria :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-    
-    case diz if diz["nome"] in uccelli and animale in terra :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-    
-    case diz if diz["nome"] in pesci and animale in acqua :
-        print(f"l'animale {animale} è un {animal_type} e può vivere in {habitat}")
-    
+match habitat:
+    case "acqua":
+        match animale:
+            case animale if animale in acqua:
+                print(f"l'animale {animale} è un {animal_type} e può vivere in acqua")
+            case _:
+                print(f"l'animale {animale} non può vivere in acqua")
+    case "aria":
+        match animale:
+            case animale if animale in aria:
+                print(f"l'animale {animale} è un {animal_type} e può vivere in aria")
+            case _:
+                print(f"l'animale {animale} non può vivere in aria")
+    case "terra":
+        match animale:
+            case animale if animale in terra:
+                print(f"l'animale {animale} è un {animal_type} e può vivere sulla terra")
+            case _:
+                print(f"l'animale {animale} non può vivere sulla terra")
     case _:
-        print(f"non so dire in quale categoria classificare l'animale {animale}")
-        print(f"non sono in grado di fornire informazioni sull'habitat {habitat}")
+        print(f"Non sono sicuro di quale habitat {habitat} sia.")
+
+    
+    
