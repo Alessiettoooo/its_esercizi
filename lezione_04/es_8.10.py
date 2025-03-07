@@ -6,7 +6,7 @@ def show_message(lista) :
 
 
 
-messaggio = input(f"scrivi un messaggio ")
+messaggio = "scrivi un messaggio "
 
 def send_messages(messaggio) :
     
